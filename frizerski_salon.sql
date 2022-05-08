@@ -1,6 +1,8 @@
 # Frizerski salon
 # Zadatak: U frizerskom salonu radi više djelatnica. Jedna djelatnica na dan radi s više korisnika. Korisnik tijekom jednog posjeta koristi jednu usluga.
 
+C:\Users\Korisnik\Documents\GitHub\Vjezba\frizerski_salon.sql
+
 drop database if exists;
 create database FrizerskiSalon;
 use FrizerskiSalon;

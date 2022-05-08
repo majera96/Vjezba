@@ -1,6 +1,7 @@
 #Salon za uljepsavanje
 #U salonu za uljepšavanje radi više djelatnica. Jedna djelatnica na dan radi s više korisnika. Korisnik tijekom jednog posjeta koristi jednu usluga.
 
+C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\salon_za_uljepsavanje.sql
 
 drop database if exists;
 create database SalonZaUljepsavanje;
