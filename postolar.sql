@@ -42,5 +42,6 @@ create table Segrt(
 create table Popravak(
     Obuca varchar(50),
     Vrijeme_popravka varchar(50),
-    Cijena varchar(50)
+    Cijena varchar(50),
+    Kod varchar (50)
 );
