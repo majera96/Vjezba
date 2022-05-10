@@ -8,30 +8,35 @@ create database FrizerskiSalon;
 use FrizerskiSalon;
 
 create table Djelatnica (
-    Osoba varchar (50),
-    SifraDjelatnice varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    iban varchar(50)
 
 );
 
 create table Korisnik (
-    Osoba varchar (50),
-    Usluga varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Usluga int not null
 );
 
 create table Usluga (
+    sifra int not null primary key auto_increment,
     Naziv varchar(50),
-    Cijena varchar(50),
-    Vrijeme varchar(50)
+    Cijena deciaml(18,2),
+    Vrijeme datetime
 
 );
 
 create table Osoba (
-    Ime varchar(50),
-    Prezime varchar(50),
-    Kontakt_broj varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Kontakt_broj int
 );
 
 create table Narudzba (
-    Usluga varchar(50),
-    osoba varchar(50)
+    sifra int not null primary key auto_increment
+    Usluga int not null,
+    osoba int not null
 );

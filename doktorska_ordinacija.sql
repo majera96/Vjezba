@@ -8,29 +8,34 @@ create database DoktorskaOrdinacija;
 use DoktorskaOrdinacija;
 
 create table Doktor(
-    Osoba varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
     Iban varchar(50)
 );
 
 create table Pacijent(
-    Osoba varchar(50),
-    Lijecenje varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Lijecenje int not null
 );
 
 create table Lijecenje(
-    Osoba varchar(50),
-    Datum varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Datum datetime,
     Dijagnoza varchar(50)
 );
 
 create table MedicinskaSestra(
-    Osoba varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
     Iban varchar(50),
-    Lijecenje varchar(50)
+    Lijecenje int not null
 );
 
 create table Osoba(
-    Ime varchar(50),
-    Prezime varchar(50),
-    Kontakt varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Kontakt int
 );

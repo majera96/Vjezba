@@ -8,30 +8,35 @@ create database Samostan;
 use Samostan;
 
 create table Svecenik(
-    Osoba varchar(50),
-    Posao varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Posao int not null
 );
 
 create table Posao(
+    sifra int not null primary key auto_increment,
     Vrsta_posla varchar(50),
-    Vrijeme varchar(50),
-    Osoba varchar(50)
+    Vrijeme datetime,
+    Osoba int not null
 );
 
 create table Nadredeni_svecenik(
-    Osoba varchar(50),
-    Posao varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Posao int not null
 );
 
 create table Osoba(
-    Ime varchar(50),
-    Prezime varchar(50),
-    Red varchar(50),
-    Kontakt varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Red varchar(20),
+    Kontakt int
 );
 
 create table Zaduzenja(
-    Svecenik varchar(50),
-    Nadredeni_svecenik varchar(50),
-    Posao varchar(50)
+    sifra int not null primary key auto_increment,
+    Svecenik int not null,
+    Nadredeni_svecenik int not null,
+    Posao int not null
 );

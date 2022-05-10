@@ -8,28 +8,32 @@ create database Muzej;
 use Muzej;
 
 create table Kustos(
-    Osoba varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
     Specijalist varchar(50),
     Iban varchar(50),
-    Radno_Vrijeme varchar(50)
+    Radno_Vrijeme datetime
 
 );
 
 create table Izlozba(
+    sifra int not null primary key auto_increment,
     Vrsta varchar(50),
-    Sponzor varchar(50),
-    Vrijeme varchar(50),
-    Ulaz varchar(50),
-    Kustos varchar(50)
+    Sponzor varchar(50) not null,
+    Vrijeme datetime,,
+    Ulaz decimal (18,2),
+    Kustos int not null
 );
 
 create table Sponzor(
-    Osoba varchar(50),
-    Iznos varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Iznos decimal (18,2)
 );
 
 create table Osoba(
-    Ime varchar(50),
-    Prezime varchar(50),
-    Kontakt varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Kontakt int
 );

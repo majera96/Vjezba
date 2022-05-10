@@ -8,33 +8,38 @@ create database DjecjiVrtic;
 use DjecjiVrtic;
 
 create table Odgajateljica(
-    Osoba varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
     Iban varchar(50),
-    Strucna_sprema varchar(50)
+    Strucna_sprema int not null
 );
 
 create table Osoba(
+    sifra int not null primary key auto_increment,
     Ime varchar(50),
     Prezime varchar(50),
-    Oib varchar(50),
-    Kontakt varchar(50)
+    Oib char(11),
+    Kontakt int
 );
 
 create table Odgojna_Skupina(
+    sifra int not null primary key auto_increment,
     Naziv varchar(50),
-    Broj_djece varchar(50),
-    Odgajateljica varchar(50),
-    Djeca varchar(50)
+    Broj_djece int,
+    Odgajateljica int not null,
+    Djeca int not null
 );
 
 create table Djeca(
-    Osoba varchar(50),
-    Odgojna_Skupina varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Odgojna_Skupina int not null
 );
 
 create table Strucna_sprema(
+    sifra int not null primary key auto_increment,
     Razina varchar(50),
     Obrazovna_ustanova varchar(50),
-    Datum_zavrsetka varchar(50)
+    Datum_zavrsetka datetime
 
 );
