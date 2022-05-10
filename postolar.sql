@@ -1,7 +1,7 @@
 #Postolar
 #Postolar popravlja obuću. Jedan korisnik može postolaru donijeti više komada obuće na popravak dok jedan komad obuće može biti više puta na popravku. Postolar ima šegrta koji sudjeluje u određenim popravcima obuće.
 
-C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\postolar.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\postolar.sql
 
 drop database if exists Postolar;
 create database Postolar;
@@ -28,7 +28,7 @@ create table Obuca(
     Postolar varchar(50),
     Klijent varchar(50),
     Model varchar(50),
-    Marka varchar(50)
+    Marka varchar(50),
     Broj varchar(50),
     Popravak varchar(50)
 );

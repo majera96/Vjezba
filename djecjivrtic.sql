@@ -1,7 +1,7 @@
 # Djecji vrtic
 # Zadatak: U dječjem vrtiću postoji više odgojnih skupina. Svaka odgojna skupina ima više djece i vodi ih jedna odgajateljica. Odgajateljica ima jednu stručnu spremu.
 
-C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\djecjivrtic.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\djecjivrtic.sql
 
 drop database if exists DjecjiVrtic;
 create database DjecjiVrtic;

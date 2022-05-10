@@ -1,9 +1,9 @@
 # Frizerski salon
 # Zadatak: U frizerskom salonu radi više djelatnica. Jedna djelatnica na dan radi s više korisnika. Korisnik tijekom jednog posjeta koristi jednu usluga.
 
-C:\Users\Korisnik\Documents\GitHub\Vjezba\frizerski_salon.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\frizerski_salon.sql
 
-drop database if exists;
+drop database if exists FrizerskiSalon;
 create database FrizerskiSalon;
 use FrizerskiSalon;
 
@@ -21,17 +21,17 @@ create table Korisnik (
 create table Usluga (
     Naziv varchar(50),
     Cijena varchar(50),
-    Vrijeme varchar(50),
+    Vrijeme varchar(50)
 
 );
 
 create table Osoba (
-    Ime varchar (50),
-    Prezime varchar (50),
-    Kontakt_broj varchar (50)
+    Ime varchar(50),
+    Prezime varchar(50),
+    Kontakt_broj varchar(50)
 );
 
 create table Narudzba (
-    Usluga varchar (50),
-    osoba varchar (50)
+    Usluga varchar(50),
+    osoba varchar(50)
 );

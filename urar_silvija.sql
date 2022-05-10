@@ -1,7 +1,7 @@
 #Urar Silvija
 #Urar popravlja satove. Jedan korisnik može uraru donijeti više satova na popravak dok jedan sat može biti više puta na popravku. Urar ima šegrta koji sudjeluje u određenim popravcima satova.
 
-C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\urar_silvija.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\urar_silvija.sql
 
 drop database if exists Urar_Silvija;
 create database Urar_Silvija;

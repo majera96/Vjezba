@@ -1,17 +1,17 @@
 #Taksi sluzba
 #Taksi tvrtka ima više vozila. Jedno vozilo vozi jedan vozač. U jednoj vožnji vozač može prevesti više putnika. Jedan putnik se naravno može tijekom vremena imati više vožnji.
 
-C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\taksi_sluzba.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\taksi_sluzba.sql
 
 drop database if exists Taksi_sluzba;
 create database Taksi_sluzba;
-use database Taksi_Sluzba;
+use Taksi_sluzba;
 
 create table Vozac(
     Osoba varchar(50),
     Vozilo varchar(50),
-    Iban varchar(50);
-    Iskustvo varchar(50),
+    Iban varchar(50),
+    Iskustvo varchar(50)
 
 );
 

@@ -1,8 +1,8 @@
 # Ovo je vjezba SQL sa sata ponovno pisana
 
-C:\xampp\mysql\bin\mysql -uroot <  C:\Users\Korisnik\Documents\GitHub\Vjezba
+#C:\xampp\mysql\bin\mysql -uroot <  C:\Users\Korisnik\Documents\GitHub\Vjezba\vjezba.sql
 
-drop database if exists;
+drop database if exists Vjezba;
 create database Vjezba;
 use Vjezba;
 
@@ -19,7 +19,7 @@ create table Grupa (
     DatumPocetka varchar(50),
     MaksimalnoPolaznika varchar(50),
     Smjer varchar(50),
-    Predavac varchar(50),
+    Predavac varchar(50)
 );
 
 create table Polaznik (
@@ -37,8 +37,8 @@ create table Osoba (
 );
 
 create table Predavac (
-    Osoba varchar(50);
-    Iban (varchar 50)
+    Osoba varchar(50),
+    Iban varchar(50)
 );
 
 create table Clan (

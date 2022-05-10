@@ -1,7 +1,7 @@
 # Samostan
 # U samostanu se nalaze svećenici. Svaki svećenik je zadužen za više poslova. Jedan posao u isto vrijeme može obavljati više svećenika. Svaki svećenik ima samo jednog nadređenog svećenika.
 
-C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\samostan.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Vjezba\samostan.sql
 
 drop database if exists Samostan;
 create database Samostan;
@@ -32,6 +32,6 @@ create table Osoba(
 
 create table Zaduzenja(
     Svecenik varchar(50),
-    Nadredeni_svecenik(50),
+    Nadredeni_svecenik varchar(50),
     Posao varchar(50)
 );
