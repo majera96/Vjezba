@@ -39,3 +39,9 @@ create table Osoba(
     Prezime varchar(50) not null,
     Kontakt int
 );
+
+alter table Doktor add foreign key (Osoba) references Osoba(sifra);
+alter table Pacijent add foreign key (Osoba) references Osoba(sifra);
+alter table MedicinskaSestra add foreign key (Osoba) references Osoba(sifra);
+
+alter table Pacijent add foreign key (Lijecenje) references Lijecenje(sifra);

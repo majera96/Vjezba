@@ -23,7 +23,7 @@ create table Korisnik (
 create table Usluga (
     sifra int not null primary key auto_increment,
     Naziv varchar(50),
-    Cijena deciaml(18,2),
+    Cijena decimal(18,2),
     Vrijeme datetime
 
 );
@@ -36,7 +36,13 @@ create table Osoba (
 );
 
 create table Narudzba (
-    sifra int not null primary key auto_increment
+    sifra int not null primary key auto_increment,
     Usluga int not null,
     osoba int not null
 );
+
+alter table Djelatnica add foreign key (Osoba) references Osoba(sifra);
+alter table Korisnik add foreign key (Osoba) references Osoba(sifra);
+
+alter table Usluga add foreign key(Korisnik) references Korisnik(sifra);
+alter table Narudzba add foreign key(Korisnik) references Korisnik(sifra);

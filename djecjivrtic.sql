@@ -22,7 +22,7 @@ create table Osoba(
     Kontakt int
 );
 
-create table Odgojna_Skupina(
+create table OdgojnaSkupina(
     sifra int not null primary key auto_increment,
     Naziv varchar(50),
     Broj_djece int,
@@ -43,3 +43,9 @@ create table Strucna_sprema(
     Datum_zavrsetka datetime
 
 );
+
+alter table Odgajateljica add foreign key (osoba) references osoba(sifra);
+alter table Djeca add foreign key (osoba) references osoba(sifra);
+
+alter table Odgajateljica add foreign key (Strucna_sprema) references Strucna_sprema(sifra);
+alter table OdgojnaSkupina add foreign key (Djeca) references Djeca(sifra);
