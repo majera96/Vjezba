@@ -8,27 +8,31 @@ create database UdrugaZaZastituZivotinja;
 use UdrugaZaZastituZivotinja;
 
 create table Zaposlenik(
-    Osoba varchar(50),
-    Certificiran varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Iskustvo boolean
 
 );
 
 create table Sticenik(
-    Ime varchar (50),
-    Vrsta_Zivotinje varchar(50),
-    Starost varchar(50),
-    Upit varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar (20),
+    Vrsta_Zivotinje varchar(20),
+    Starost decimal (18,2),
+    Upit varchar(500)
 );
 
 create table Osoba(
-    Ime varchar(50),
-    Prezime varchar(50),
-    Kontakt_Broj varchar(50)
+    sifra int not null primary key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Kontakt_Broj int
 );
 
 create table Prostor(
-    Sticenik varchar(50),
-    Kvadratura varchar(50)
+    sifra int not null primary key auto_increment,
+    Sticenik int not null,
+    Kvadratura decimal (18,2)
 
 );
 

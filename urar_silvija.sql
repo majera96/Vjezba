@@ -8,37 +8,42 @@ create database Urar_Silvija;
 use Urar_Silvija;
 
 create table Urar(
-    Osoba varchar(50),
-    Iskustvo varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Iskustvo boolean
 );
 
 create table Segrt(
-    Osoba varchar(50),
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
     Iban varchar(50)
 );
 
 create table Korisnik(
-    Osoba varchar(50),
-    Sat varchar(50),
-    Popravak varchar(50)
+    sifra int not null primary key auto_increment,
+    Osoba int not null,
+    Sat int not null,
+    Popravak int not null
 );
 
 create table Osoba(
-    Ime varchar(50),
-    Prezime varchar(50),
-    Kontakt varchar(50)
+    sifra int not null priamry key auto_increment,
+    Ime varchar(50) not null,
+    Prezime varchar(50) not null,
+    Kontakt int
 );
 
 create table Sat(
-    Model varchar(50),
-    Boja varchar(50),
+    sifra int not null primary key auto_increment,
+    Model varchar(20),
+    Boja varchar(20),
     Materijal varchar(50)
 );
 
 create table Popravak(
-    Sat varchar(50),
-    Vrijeme_popravka varchar(50),
-    Cijena varchar(50),
-    Kod varchar(50)
-
-);
+    sifra int not null primary key auto_increment,
+    Sat int not null,
+    Vrijeme_popravka datetime,
+    Cijena decimal(18,2),
+    Kod char(4)
+    );
