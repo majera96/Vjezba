@@ -10,7 +10,8 @@ use FrizerskiSalon;
 create table Djelatnica (
     sifra int not null primary key auto_increment,
     Osoba int not null,
-    iban varchar(50)
+    iban varchar(50),
+    Usluga int not null
 
 );
 
@@ -38,11 +39,13 @@ create table Osoba (
 create table Narudzba (
     sifra int not null primary key auto_increment,
     Usluga int not null,
-    osoba int not null
+    Korisnik int not null
 );
 
 alter table Djelatnica add foreign key (Osoba) references Osoba(sifra);
 alter table Korisnik add foreign key (Osoba) references Osoba(sifra);
 
-alter table Usluga add foreign key(Korisnik) references Korisnik(sifra);
+alter table Narudzba add foreign key(Usluga) references Usluga(sifra);
 alter table Narudzba add foreign key(Korisnik) references Korisnik(sifra);
+
+alter table Korisnik add foreign key (Usluga) references Usluga(sifra);
