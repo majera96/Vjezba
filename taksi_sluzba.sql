@@ -42,7 +42,16 @@ create table Vozilo(
 );
 
 create table Osoba(
+    sifra int not null primary key auto_increment,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
     Kontakt int
 );
+
+alter table Vozac add foreign key (Osoba) references Osoba(sifra);
+alter table Putnik add foreign key (Osoba) references Osoba(sifra);
+
+alter table Voznja add foreign key (Vozac) references Vozac(sifra);
+alter table Voznja add foreign key (Putnik) references Putnik(sifra);
+
+alter table Vozilo add foreign key (Vozac) references Vozac(sifra);
