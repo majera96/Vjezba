@@ -17,7 +17,8 @@ create table Segrt(
     sifra int not null primary key auto_increment,
     Osoba int not null,
     Iban varchar(50)
-);
+    );
+
 
 create table Korisnik(
     sifra int not null primary key auto_increment,
@@ -27,7 +28,7 @@ create table Korisnik(
 );
 
 create table Osoba(
-    sifra int not null priamry key auto_increment,
+    sifra int not null primary key auto_increment,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
     Kontakt int
@@ -47,3 +48,14 @@ create table Popravak(
     Cijena decimal(18,2),
     Kod char(4)
     );
+
+alter table Urar add foreign key (Osoba) references Osoba(sifra);
+alter table Segrt add foreign key (osoba) references osoba(sifra);
+alter table Korisnik add foreign key (Osoba) references Osoba(sifra);
+
+alter table Korisnik add foreign key (Popravak) references Popravak(sifra);
+
+
+alter table Korisnik add foreign key (Sat) references Sat(sifra);
+
+alter table Popravak add foreign key (Sat) references Sat(sifra);
