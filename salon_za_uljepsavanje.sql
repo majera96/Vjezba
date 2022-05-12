@@ -35,6 +35,14 @@ create table Usluga(
 
 create table Narudzba(
     sifra int not null primary key auto_increment,
-    Osoba int not null,
+    Korisnik int not null,
     Usluga int not null
 );
+
+alter table Djelatnica add foreign key (Osoba) references Osoba(sifra);
+alter table Korisnik add foreign key (Osoba) references Osoba(sifra);
+
+alter table Narudzba add foreign key (Korisnik) references Korisnik(sifra);
+alter table Narudzba add foreign key (Usluga) references Usluga(sifra);
+
+alter table Korisnik add foreign key (Usluga) references Usluga(sifra);
