@@ -19,7 +19,8 @@ create table Sticenik(
     Ime varchar (20),
     Vrsta_Zivotinje varchar(20),
     Starost decimal (18,2),
-    Upit varchar(500)
+    Upit varchar(500),
+    Zaposlenik int not null
 );
 
 create table Osoba(
@@ -35,4 +36,10 @@ create table Prostor(
     Kvadratura decimal (18,2)
 
 );
+
+alter table Zaposlenik add foreign key (Osoba) references Osoba(sifra);
+alter table Prostor add foreign key (Sticenik) references Sticenik(sifra);
+
+alter table Sticenik add foreign key (Zaposlenik) references Zaposlenik(sifra);
+
 
