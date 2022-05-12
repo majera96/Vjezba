@@ -20,7 +20,7 @@ create table Izlozba(
     sifra int not null primary key auto_increment,
     Vrsta varchar(50),
     Sponzor varchar(50) not null,
-    Vrijeme datetime,,
+    Vrijeme datetime,
     Ulaz decimal (18,2),
     Kustos int not null
 );
@@ -28,6 +28,7 @@ create table Izlozba(
 create table Sponzor(
     sifra int not null primary key auto_increment,
     Osoba int not null,
+    Izlozba int not null,
     Iznos decimal (18,2)
 );
 
@@ -37,3 +38,9 @@ create table Osoba(
     Prezime varchar(50) not null,
     Kontakt int
 );
+
+alter table Kustos add foreign key (osoba) references osoba(sifra);
+alter table Sponzor add foreign key (osoba) references osoba(sifra);
+
+alter table Izlozba add foreign key (Kustos) references Kustos(sifra);
+alter table Sponzor add foreign key (Izlozba) references Izlozba(sifra);
