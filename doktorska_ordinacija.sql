@@ -23,15 +23,14 @@ create table Lijecenje(
     sifra int not null primary key auto_increment,
     Osoba int not null,
     Datum datetime,
-    Dijagnoza varchar(50)
+    Dijagnoza varchar(150)
 );
 
 create table MedicinskaSestra(
     sifra int not null primary key auto_increment,
     Osoba int not null,
-    Iban varchar(50),
-    Lijecenje int not null
-);
+    Iban varchar(50)
+    );
 
 create table Osoba(
     sifra int not null primary key auto_increment,
@@ -39,6 +38,7 @@ create table Osoba(
     Prezime varchar(50) not null,
     Kontakt int
 );
+
 
 alter table Doktor add foreign key (Osoba) references Osoba(sifra);
 alter table Pacijent add foreign key (Osoba) references Osoba(sifra);
