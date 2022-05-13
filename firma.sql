@@ -33,16 +33,34 @@ insert into projekt (naziv)
 values ('ProjektM');
 
 insert into projekt (naziv)
-values ('ProjektZ')
+values ('ProjektZ');
 
-insert into programer (ime,prezime)
-values ('Antonio','Majer')
+insert into projekt (naziv)
+values ('ProjektX');
 
-insert into programer (ime,prezime)
-values ('Ante','Bikić')
+insert into programer (ime, prezime)
+values ('Antonio', 'Majer');
+insert into programer (ime, prezime)
+values ('Ante', 'Bikić');
+insert into programer (ime, prezime)
+values ('Antonio', 'Vuletić');
+insert into programer (ime, prezime)
+values ('Antun', 'Rukavina');
+insert into programer (ime, prezime)
+values ('Ante', 'Antić');
+insert into programer (ime, prezime)
+values ('Filip', 'Filipović');
 
-insert into programer (ime,prezime)
-values ('Antonio','Vuletić')
 
-insert into programer (ime,prezime)
-values ('Antun','Rukavina')
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (1, 1, '2022-05-11');
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (1, 4, '2022-05-11');
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (2,2, '2022-05-11');
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (3, 3, '2022-05-11');
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (2, 5, '2022-05-11');
+insert into sudjeluje (projekt, programer, datum_pocetka)
+values (3, 6, '2022-05-11');
