@@ -10,8 +10,7 @@ use FrizerskiSalon;
 create table Djelatnica (
     sifra int not null primary key auto_increment,
     Osoba int not null,
-    iban varchar(50),
-    Usluga int not null
+    iban varchar(50)
 
 );
 
