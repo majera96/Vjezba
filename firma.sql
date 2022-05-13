@@ -1,7 +1,7 @@
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\Vjezba\firma.sql
 
 drop database if exists firma;
-create database firma default charset utf8mb4;;
+create database firma default charset utf8mb4;
 use firma;
 
 create table projekt (
@@ -36,7 +36,7 @@ insert into projekt (naziv)
 values ('ProjektZ');
 
 insert into projekt (naziv)
-values ('ProjektX');
+values ('ProjektX');3
 
 insert into programer (ime, prezime)
 values ('Antonio', 'Majer');
