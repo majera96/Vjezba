@@ -8,7 +8,7 @@ drop database if exists drzavna_samouprava;
 create database drzavna_samouprava default charset utf8mb4;
 use drzavna_samouprava;
 
-create table zupanija (
+create table zupanija(
     sifra int not null primary key auto_increment,
     naziv varchar(50),
     zupan varchar(50)
@@ -32,6 +32,8 @@ create table mjesto(
     naziv varchar(50)
 );
 
-alter table opcina add foreign key (zupanija) references zupanija(sifra);
 alter table zupanija add foreign key (zupan) references zupan(sifra);
+alter table opcina add foreign key (zupanija) references zupanija(sifra);
 alter table mjesto add foreign key (opcina) references opcina(sifra);
+
+#error kod postavljanja kljuca
