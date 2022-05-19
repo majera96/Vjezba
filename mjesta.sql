@@ -1,3 +1,5 @@
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\Vjezba\mjesta.sql
+
 drop database if exists mjesta;
 create database mjesta character set utf8;
 use mjesta;
@@ -914,3 +916,14 @@ INSERT INTO  mjesto  ( postanskibroj ,  zupanija ,  naziv ) VALUES
 ('53291', 9, 'Novalja'),
 ('53294', 9, 'Lun'),
 ('53296', 9, 'Zubovići');
+
+
+#zadaca:
+# Islistajte broj županije iz Vašeg mjesta
+# Unesite mjesto Kitiger u OBŽ
+select * from mjesto where naziv like 'Đak%';
+
+insert into mjesto(postanskibroj,zupanija,naziv)
+values (35675,14,'Kitiger');
+
+select * from mjesto where naziv like 'Kitiger';
