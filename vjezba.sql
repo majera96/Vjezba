@@ -105,7 +105,7 @@ values (null,'Shaquille','O''Neal','saki@gmail.com',null);
 
 # jedna insert naredba može unositi više redaka u tablicu
 # 3 - 17
-insert into osoba (sifra,ime,prezime,email,oib)
+insert into osoba (sifra,prezime,ime,email,oib)
 values
 (null,'Todorović','Filip','filip.tod95@gmail.com',null),
 (null,'Majer','Antonio','majer.antonio@gmail.com',null),
@@ -121,7 +121,7 @@ values
 (null,'Bukovec','Boris','botaosijek@gmail.com',null),
 (null,'Kovač','Filip','chilim.dj@gmail.com',null),
 (null,'Vuletić','Antonio','avuletic2212@gmail.com',null),
-(null,'Andrija','Kruhoberec','akruhoberec1@outlook.com',null);
+(null,'Kruhoberec','Andrija','akruhoberec1@outlook.com',null);
 
 
 
@@ -226,8 +226,45 @@ update osoba set oib=38239190930 where sifra=4;
 
 update osoba set oib=5214785204 where sifra=18;
 
-delete from osoba where sifra=4;
-delete from predavac where sifra=3;
-delete from polaznik where sifra=2;
+select naziv,cijena from smjer;
+select naziv,upisnina from smjer;
 
-delete from clan where sifra=2;
+select naziv, 'Osijek' from smjer;
+select naziv, 'Đakovo' from smjer;
+
+select naziv, now() from smjer;
+
+select naziv as smjer, 'Edunova' as skola from smjer;
+
+select naziv,cijena from smjer;
+select naziv,cijena,naziv from smjer;
+select *,naziv from smjer;
+
+select ime,prezime from osoba;
+select datumpocetka,naziv from grupa;
+select osoba from predavac;
+select iban from predavac;
+
+select * from osoba where sifra>3 and sifra<5;
+select * from osoba where sifra=2 or sifra=5;
+select * from osoba where not (sifra=4);
+
+select * from osoba where ime like '%Fili';
+select * from smjer where sifra=1;
+select * from smjer where sifra=4;
+select * from osoba where sifra=4;
+
+update osoba set email='majeera@gmail.com' where sifra=4;
+
+select * from osoba where sifra<>4;
+
+select * from osoba where ime like 'F%';
+select * from osoba where ime like 'a%';
+
+select * from osoba where prezime like '%ak%';
+
+select * from osoba where sifra=5 or sifra=7 or sifra=9;
+select * from osoba where sifra in (2,7,9);
+
+select * from osoba where sifra>=2 and sifra <=7;
+select * from osoba where sifra between 3 and 7;
