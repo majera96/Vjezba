@@ -268,3 +268,50 @@ select * from osoba where sifra in (2,7,9);
 
 select * from osoba where sifra>=2 and sifra <=7;
 select * from osoba where sifra between 3 and 7;
+
+#Vjezba sa sata
+insert into osoba(sifra,ime,prezime)
+values (null,'Karlo','Ček');
+
+insert into predavac(sifra,osoba)
+values (null,22);
+
+update predavac set osoba=22 where sifra=1;
+
+delete from predavac where sifra=6;
+
+update grupa set predavac=5 where sifra=1;
+update grupa set predavac=4 where sifra=2;
+
+select b.naziv as smjer,
+a.naziv as grupa,
+d.ime, d.prezime
+from
+grupa a inner join smjer b 
+on a.smjer = b.sifra
+left join predavac c 
+on a.predavac=c.sifra 
+left join osoba d 
+on c.osoba = d.sifra;
+
+select e.ime,e.prezime
+from smjer a inner join grupa b 
+on a.sifra=b.smjer 
+inner join clan c on b.sifra=c.grupa 
+inner join polaznik d on c.polaznik=d.sifra 
+inner join osoba e on d.osoba=e.sifra 
+where a.naziv='PHP Programiranje';
+
+select e.ime,e.prezime
+from smjer a inner join grupa b 
+on a.sifra=b.smjer 
+inner join clan c on b.sifra=c.grupa 
+inner join polaznik d on c.polaznik=d.sifra 
+inner join osoba e on d.osoba=e.sifra 
+where a.naziv='Java Programiranje';
+
+insert into clan (sifra,grupa,polaznik)
+values (null,2,2);
+
+delete from clan where sifra=16;
+delete from clan where sifra=17;
