@@ -1,4 +1,6 @@
-﻿# Klijent pokrenuti s --default-character-set=utf8 
+﻿#C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\Vjezba\knjiznica.sql
+
+# Klijent pokrenuti s --default-character-set=utf8 
 drop database if exists knjiznica;
 create database knjiznica DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci;
 use knjiznica;
@@ -21,7 +23,7 @@ CREATE TABLE mjesto(
 CREATE TABLE katalog(
    sifra	  int NOT NULL PRIMARY KEY,
    autor	  int ,
-   naslov	  varchar(50) NOT NULL CHECK (len(naslov)>3),
+   naslov	  varchar(50) NOT NULL CHECK (length(naslov)>3),
    izdavac  int ,
    mjesto   int )DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 
@@ -7479,3 +7481,68 @@ insert into katalog (sifra, naslov, autor, izdavac,mjesto) values (3218, 'ODVOJE
 insert into katalog (sifra, naslov, autor, izdavac,mjesto) values (3219, 'NOVI SVIJET DUHA', 18993, 408, 69698);
 insert into katalog (sifra, naslov, autor, izdavac,mjesto) values (3220, 'RUM PUNČ', 15903, 479, 70173);
 insert into katalog (sifra, naslov, autor, izdavac,mjesto) values (3221, 'KRALJICA ŠKOLE', 19299, 441, 71323);
+
+update mjesto set naziv='Osijek' where sifra=4;
+
+select * from mjesto where sifra=4;
+select naziv,postanskiBroj from mjesto where sifra=2;
+
+select postanskiBroj, 'Tekst', length(naziv) from mjesto where sifra=2;
+
+select postanskiBroj as 'Poštanski Broj',naziv from mjesto where sifra=2;
+
+select sifra,ime,prezime, datumRodenja as 'Datum Rođenja' from autor where sifra=2;
+select naziv,aktivan from izdavac where sifra=2;
+
+select naziv, postanskiBroj from mjesto where sifra>2 and postanskiBroj is null;
+select naziv, postanskiBroj from mjesto where not(sifra>2 and postanskiBroj is not null);
+
+select ime,prezime,datumRodenja from autor where sifra!=2 and datumRodenja between '1980-01-01' and '1980-02-01';
+
+select ime,prezime from autor where (sifra>=2 and sifra<=4) or (sifra>15452 and sifra<15460);
+select ime,prezime,sifra from autor where (sifra>=2 and sifra<=4) or (sifra>15452 and sifra<15460);
+
+select naziv from izdavac where sifra in (414,490,696);
+select naziv from izdavac where naziv like 'a%';
+select naziv from izdavac where naziv like '%nt';
+
+select naziv from izdavac where naziv like 'a%k';
+select naziv from izdavac where naziv like '%obrt%';
+
+select ime,prezime from autor;
+select naslov from katalog where naslov like '%ljub%';
+select naziv,postanskiBroj from mjesto where postanskiBroj is not null;
+select naziv from mjesto where sifra>65000 and sifra<69000;
+select sifra,naziv from mjesto;
+select naziv from mjesto where naziv like 'Y%';
+select ime,prezime from autor where datumRodenja between '1980-12-06' and '1980-12-08';
+select * from izdavac;
+select naziv from izdavac where aktivan=1 and naziv like '%.';
+select naziv from izdavac where aktivan=0 or aktivan=null;
+select naziv from izdavac where sifra not in (2,3,6);
+
+select sifra from autor
+where ime='August' and prezime='Šenoa';
+select naslov from katalog where autor=2;
+
+select b.naslov
+from autor a inner join katalog b
+on a.sifra = b.autor
+where
+a.ime='August' and a.prezime like 'Šenoa';
+
+#ponovio bez gledanja
+select b.naslov
+from autor a inner join katalog b 
+on a.sifra = b.autor 
+where 
+a.ime='August' and a.prezime='Šenoa';
+
+select b.naslov,d.naziv
+from autor a
+inner join katalog b on a.sifra = b.autor
+inner join izdavac c on b.izdavac = c.sifra 
+inner join mjesto d on b.mjesto = d.sifra
+where 
+a.datumrodenja between '1976-01-01' and '1973-12-31' 
+and c.aktivan=1;
