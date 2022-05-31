@@ -8,7 +8,7 @@ use kolokvij_vjezba_1;
 
 create table sestra (
     sifra int not null primary key auto_increment,
-    introvertno bit,
+    introvertno boolean,
     haljina varchar(31) not null,
     maraka decimal(16,6),
     hlace varchar(46) not null,
@@ -74,8 +74,8 @@ create table mladic (
     suknja varchar(50) not null,
     kuna decimal(16,8) not null,
     drugiputa datetime,
-    asocijalno bit,
-    ekstroventno bit not null,
+    asocijalno boolean,
+    ekstroventno boolean not null,
     dukserica varchar(48) not null,
     muskarac int
 );
@@ -135,3 +135,49 @@ insert into cura(sifra,novcica,gustoca,ogrlica)
 values (null,'11','13.8',9);
 
 update cura set gustoca=15.77 where sifra in(1,2,3);
+
+# 3. U tablici mladic obrišite sve zapise čija je vrijednost kolone kuna veće od 15,78.
+select * from mladic;
+insert into mladic (sifra,suknja,kuna,ekstroventno,dukserica)
+values (null,'Suknja1','15',true,'Duksa123');
+insert into mladic (sifra,suknja,kuna,ekstroventno,dukserica)
+values (null,'Suknja2','11',true,'Duksa223');
+insert into mladic (sifra,suknja,kuna,ekstroventno,dukserica)
+values (null,'Suknja3','18',true,'Duksa1234556634');
+
+delete from mladic where kuna>'15.78';
+
+# 4. Izlistajte kratkamajica iz tablice zena uz uvjet da vrijednost kolone 
+# hlace sadrže slova ana.
+
+insert into zena (sifra,kratkamajica,jmbag,bojaociju,sestra,hlace)
+values (null,'ana123',14589897,'Plava',1,'anahlace');
+select kratkamajica from zena where hlace like '%ana%';
+
+# 5. Prikažite dukserica iz tablice svekar, asocijalno iz tablice mladic te 
+# hlace iz tablice muskarac uz uvjet da su vrijednosti kolone hlace iz 
+# tablice zena počinju slovom a te da su vrijednosti kolone haljina iz 
+# tablice sestra sadrže niz znakova ba. Podatke posložite po hlace iz 
+# tablice muskarac silazno.
+
+select f.dukserica
+from svekar a right join sestra_svekar b
+on a.sifra = b.svekar
+right join sestra c on c.sifra = b.sestra
+right join zena d on c.sifra = d.sestra
+right join muskarac e on d.sifra = e.zena 
+right join mladic f on e.sifra = f.muskarac;
+
+update sestra set haljina='Balenciaga' where sifra=1;
+update muskarac set hlace='Antonio' where sifra in (2,3);
+
+select a.hlace
+from muskarac a left join zena b 
+on a.zena = b.sifra 
+left join sestra c on b.sestra = c.sifra 
+where b.hlace like 'a%' and c.haljina like '%ba%';
+
+# 6. Prikažite kolone haljina i maraka iz tablice sestra čiji se primarni 
+# ključ ne nalaze u tablici sestra_svekar.
+
+select haljina,maraka from sestra;
