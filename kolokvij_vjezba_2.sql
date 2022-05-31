@@ -110,3 +110,33 @@ insert into neprijatelj(sifra,haljina,modelnaocala,kuna)
 values (null,'Haljina1','Model1','9'),(null,'Haljina2','Model2','3'),(null,'Haljina3','Model3','5');
 
 delete from brat where ogrlica<>14;
+
+#4. Izlistajte suknja iz tablice cura uz uvjet da vrijednost kolone 
+#drugiputa nepoznate
+
+select suknja,drugiputa from cura where drugiputa=null;
+
+#5.Prikažite novica iz tablice zarucnica, neprijatelj iz tablice brat te haljina 
+#iz tablice neprijtelj uz uvjet da su vrijdnosti kolone drugiputa iz tablice 
+#cura poznate te da su vrijednosti kolone vesta iz tablice decko sadrze
+# niz znakova ba.Podatke posložite po haljina iz tablice 
+#neprijatelj silazno.
+
+select a.novcica,f.neprijatelj,e.haljina
+from zarucnica a left join decko_zarucnica b 
+on a.sifra = b.zarucnica 
+right join decko c on b.decko = c.sifra 
+left join cura d on c.sifra = d.decko
+left join neprijatelj e on d.sifra = e.cura 
+left join brat f on e.sifra = f.neprijatelj;
+
+select vesta from decko;
+update decko set vesta='Vesta1' where sifra=1;
+update decko set vesta='Vesta2' where sifra=2;
+update decko set vesta='Vesta3' where sifra=3;
+update decko set vesta='BaVesta' where sifra in (1,2,3);
+
+#6.Prikažite kolone vesta i asocijalno iz tablice decko čiji
+#se primarni ključ ne nalaze u tablici decko_zarucnica.
+
+select vesta,asocijalno from decko;
