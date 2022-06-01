@@ -92,12 +92,12 @@ values (null,'Dobra Haljina','2022-05-31','Isto Dobra Majica'),(null,'Još bolja
 
 #2. U tablici prijatelj postavite svim zapisima kolonu treciputa
 #na vrijednost 30.travanj 2020.
-select * from prijatelj;
-insert into prijatelj (sifra,treciputa,ekstroventno,svekar)
-values (null,'2022-05-31',true,1),(null,'2022-05-30',true,2),(null,'2022-05-29',false,3);
 
 insert into svekar(sifra,ogrlica,asocijalno)
 values (null,1,true),(null,2,true),(null,3,false);
+
+insert into prijatelj (sifra,treciputa,ekstroventno,svekar)
+values (null,'2022-05-31',true,1),(null,'2022-05-30',true,2),(null,'2022-05-29',false,3);
 
 update prijatelj set treciputa='2020-04-30' where sifra in (1,2,3);
 
