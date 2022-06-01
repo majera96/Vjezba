@@ -128,7 +128,8 @@ on a.sifra = b.zarucnica
 right join decko c on b.decko = c.sifra 
 left join cura d on c.sifra = d.decko
 left join neprijatelj e on d.sifra = e.cura 
-left join brat f on e.sifra = f.neprijatelj;
+left join brat f on e.sifra = f.neprijatelj
+where d.drugiputa=null and c.vesta like '%ba%';
 
 select vesta from decko;
 update decko set vesta='Vesta1' where sifra=1;

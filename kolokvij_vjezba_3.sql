@@ -101,7 +101,47 @@ values (null,1,1),(null,2,2),(null,3,3);
 
 #2. U tablici svekar postavite svim zapisima kolonu suknja na 
 #vrijednost Osijek.
+
+insert into cura(sifra,ogrlica)
+values (null,1),(null,2),(null,3);
+
 insert into svekar(sifra,novcica,suknja,narukvica,cura)
 values (null,'15','Suknja1',1,1),(null,'10','Suknja2',2,2),(null,'9','Suknja3',3,3);
+
+update svekar set suknja='Osijek';
+
+#3. U tablici punica obrišite sve zapise čija je vrijednost kolone
+#kratka majica jednako AB.
+select kratkamajica from punica;
+insert into punica(sifra,kratkamajica,kuna,vesta)
+values (null,'ABmajica','5','Vesta1'),(null,'Majica2','10','Vesta2'),(null,'Majica3','15','Vesta3');
+delete from punica where kratkamajica like '%ab%';
+
+#4.Izlistajte majica iz tablice ostavljena uz uvjet da vrijednost kolone
+#lipa nije 9,10,20,30 ili 35.
+select * from ostavljena;
+update ostavljena set lipa='5' where sifra=1;
+update ostavljena set lipa='20' where sifra=2;
+update ostavljena set lipa='31' where sifra=3;
+select majica from ostavljena where lipa not in('9','10','20','30','35');
+
+#Prikažite ekstroventno iz tablice brat,vesta iz tablice punica
+#te kuna iz tablice snasa uz uvjet da su vrijednosti kolone lipa
+#iz tablice ostavljena razlčito od 91 te da su vrijednosti kolone haljina iz tablice
+#prijatelj sadrže niz znakova ba. Podatke posložite po kuna iz tablice snasa silazno.
+
+select a.ekstroventno,f.vesta,e.kuna
+from brat a inner join prijatelj_brat b 
+on a.sifra = b.brat 
+inner join prijatelj c on b.prijatelj = c.sifra 
+inner join ostavljena d on c.sifra = d.prijatelj 
+inner join snasa e on d.sifra = e.ostavljena 
+inner join punica f on e.sifra = f.snasa
+where d.lipa <>91 and c.haljina like '%ba%';
+
+#6.Prikažite kolone haljina i lipa iz tablice prijatelj čiji se primarni ključ
+#ne nalaze u tablici prijatelj_brat.
+
+select haljina,lipa from prijatelj;
 
 
