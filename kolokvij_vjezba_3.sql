@@ -142,6 +142,12 @@ where d.lipa <>91 and c.haljina like '%ba%';
 #6.Prikažite kolone haljina i lipa iz tablice prijatelj čiji se primarni ključ
 #ne nalaze u tablici prijatelj_brat.
 
-select haljina,lipa from prijatelj;
+select a.haljina, a.lipa
+from prijatelj a left join prijatelj_brat b 
+on a.sifra = b.prijatelj
+where b.prijatelj is null;
+
+select haljina from prijatelj;
+select lipa from prijatelj;
 
 

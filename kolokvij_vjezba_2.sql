@@ -122,14 +122,19 @@ select suknja,drugiputa from cura where drugiputa=null;
 # niz znakova ba.Podatke posložite po haljina iz tablice 
 #neprijatelj silazno.
 
-select a.novcica,f.neprijatelj,e.haljina
-from zarucnica a left join decko_zarucnica b 
+select a.novcica, f.neprijatelj, e.haljina
+from zarucnica a inner join decko_zarucnica b 
 on a.sifra = b.zarucnica 
-right join decko c on b.decko = c.sifra 
-left join cura d on c.sifra = d.decko
-left join neprijatelj e on d.sifra = e.cura 
-left join brat f on e.sifra = f.neprijatelj
-where d.drugiputa=null and c.vesta like '%ba%';
+inner join decko c 
+on b.decko = c.sifra
+inner join cura d 
+on c.sifra = d.decko
+inner join neprijatelj e
+on d.sifra = e.cura
+inner join brat f 
+on e.sifra = f.neprijatelj
+where d.drugiputa is not null and c.vesta like '%ba%'
+order by e.haljina desc;
 
 select vesta from decko;
 update decko set vesta='Vesta1' where sifra=1;
@@ -140,4 +145,7 @@ update decko set vesta='BaVesta' where sifra in (1,2,3);
 #6.Prikažite kolone vesta i asocijalno iz tablice decko čiji
 #se primarni ključ ne nalaze u tablici decko_zarucnica.
 
-select vesta,asocijalno from decko;
+select a.vesta, a.asocijalno
+from decko a left join decko_zarucnica b 
+on b.decko = a.sifra 
+where b.decko is null;

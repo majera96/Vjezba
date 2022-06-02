@@ -179,6 +179,6 @@ update muskarac set hlace='Antonio' where sifra in (2,3);
 # ključ ne nalaze u tablici sestra_svekar.
 
 select a.haljina,a.maraka
-from sestra a inner join sestra_svekar b 
+from sestra a left join sestra_svekar b 
 on a.sifra = b.sestra
 where b.sestra is null;
