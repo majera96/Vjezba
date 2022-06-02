@@ -160,24 +160,25 @@ select kratkamajica from zena where hlace like '%ana%';
 # tablice sestra sadrže niz znakova ba. Podatke posložite po hlace iz 
 # tablice muskarac silazno.
 
-select f.dukserica
-from svekar a right join sestra_svekar b
+select a.dukserica, f.asocijalno, e.hlace
+from svekar a inner join sestra_svekar b
 on a.sifra = b.svekar
-right join sestra c on c.sifra = b.sestra
-right join zena d on c.sifra = d.sestra
-right join muskarac e on d.sifra = e.zena 
-right join mladic f on e.sifra = f.muskarac;
+inner join sestra c on c.sifra = b.sestra
+inner join zena d on c.sifra = d.sestra
+inner join muskarac e on d.sifra = e.zena 
+inner join mladic f on e.sifra = f.muskarac
+where e.hlace like 'a%' and c.haljina like '%ba%'
+order by c.hlace desc;
 
+select * from sestra;
 update sestra set haljina='Balenciaga' where sifra=1;
+select * from muskarac;
 update muskarac set hlace='Antonio' where sifra in (2,3);
-
-select a.hlace
-from muskarac a left join zena b 
-on a.zena = b.sifra 
-left join sestra c on b.sestra = c.sifra 
-where b.hlace like 'a%' and c.haljina like '%ba%';
 
 # 6. Prikažite kolone haljina i maraka iz tablice sestra čiji se primarni 
 # ključ ne nalaze u tablici sestra_svekar.
 
-select haljina,maraka from sestra;
+select a.haljina,a.maraka
+from sestra a inner join sestra_svekar b 
+on a.sifra = b.sestra
+where b.sestra is null;
