@@ -1,3 +1,5 @@
+#C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 <  C:\Users\Korisnik\Documents\GitHub\Vjezba\BazePodatakaVjezba\mysqlsampledatabase.sql
+
 /*
 *********************************************************************
 http://www.mysqltutorial.org
@@ -10,7 +12,8 @@ Version 2.0
 + changed table type to InnoDB
 + added foreign keys for all tables 
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -229,3 +232,180 @@ UNLOCK TABLES;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+select * from products
+order by productLine desc, productName;
+
+select * from products 
+order by 2 desc, 3;
+
+select * from products
+order by 2 desc, 3 limit 5;
+
+select * from products
+order by 2 desc, 3 limit 10,5;
+
+select sum(buyPrice),
+min (buyPrice),
+max (buyPrice),
+avg(buyPrice) from products
+where productLine='trains';
+
+select sum(buyPrice),
+min (buyPrice),
+max (buyPrice),
+avg(buyPrice) from products
+where productLine like '%i%'
+group by productLine
+having sum(buyPrice)>1000
+order by 2 desc
+limit 1;
+
+select distinct productline from products;
+
+# Postavite cijenu na 10 svim
+# proizvodima koji u svom nazivu
+# nemaju slovo i
+
+select * from products;
+
+update products set buyPrice=10 where productName not like '%i%';
+
+# koliko ima proizvoda koji koštaju 10
+select sum(1) from products where buyPrice=10;
+select count(*) from products where buyPrice=10;
+
+# svim proizvodima koji imaju cijenu 10
+# povećajte cijenu za 10%
+
+update products set buyPrice=Buyprice*1.1 where productName not like '%i%';
+
+# Unesite sebe kao glavnog šefa
+select * from employees;
+INSERT INTO classicmodels.employees
+(employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle)
+VALUES(1703, 'Majer', 'Antonio', 'x300x', 'majer.antonio@gmail.com', 1 , NULL, 'President');
+
+# kolegu do sebe unesite kao svog podređenog
+INSERT INTO classicmodels.employees
+(employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle)
+VALUES(1705, 'Bikic', 'Ante', 'x11112', 'bikicante@gmail.com', 1, 1703, 'CoPresident');
+
+# obrisati sve proizvode u kategoriji planes
+
+select * from orderdetails  where 
+productCode in (select productCode from 
+products where productLine='planes');
+
+delete from orderdetails  where 
+productCode in 
+# podupit
+(select productCode from 
+products where productLine='trains');
+
+delete from products where productLine ='planes';
+
+# izlistajte sve jedinstvene nazive proizvoda 
+# i njihove cijene koje su kupili
+# kupci iz Las Vegasa
+select distinct  d.productName, d.buyPrice 
+from customers a
+inner join orders b 
+on a.customerNumber =b.customerNumber 
+inner join orderdetails c 
+on b.orderNumber =c.orderNumber 
+inner join products d 
+on c.productCode =d.productCode 
+where a.city  ='Las Vegas'
+order by 1 
+
+# koliko je proizvoda kupljeno u kojoj državi
+select a.city, count(d.productCode)
+from customers a
+inner join orders b 
+on a.customerNumber =b.customerNumber 
+inner join orderdetails c 
+on b.orderNumber =c.orderNumber 
+inner join products d 
+on c.productCode =d.productCode 
+group by a.city  
+
+# svim proizvodima kupljenim u Las Vegasu 
+# povećati cijenu za 10%
+update products a 
+inner join orderdetails b
+on a.productCode =b.productCode 
+inner join orders c 
+on b.orderNumber =c.orderNumber 
+inner join customers d
+on c.customerNumber =d.customerNumber 
+set a.buyPrice =a.buyPrice *1.1
+where d.city  ='Las Vegas';
+
+# obrisati sve proizvode koje su kupili
+# kupci koji dolaze iz Los Angelesa
+
+create table zabrisanje
+select distinct d.productCode,  d.productName, d.buyPrice 
+from customers a
+inner join orders b 
+on a.customerNumber =b.customerNumber 
+inner join orderdetails c 
+on b.orderNumber =c.orderNumber 
+inner join products d 
+on c.productCode =d.productCode 
+where a.city  ='Los Angeles'
+order by 1 ;
+
+delete from orderdetails 
+where productCode in (
+select productCode from zabrisanje);
+
+delete from products  
+where productCode in (
+select productCode from zabrisanje);
+
+drop table zabrisanje;
+
+
+# Tablici products dodati kolonu 
+# aktivan logički tip podatka
+alter table products add aktivan boolean;
+select * from products p ;
+
+select * from employees;
+# izlistajte sve zaposlenike kojima je šefica
+# Diane Murphy bez korištenja vrijednosti 
+# primarnih i vanjskih ključeva (brojeva)
+
+select * from employees where reportsTo =1002;
+
+select b.firstName, b.lastName 
+from employees a inner join employees b
+on a.employeeNumber =b.reportsTo 
+where a.lastName ='Murphy' and 
+a.firstName ='Diane';
+
+# Ispišite imena i prezimena djelatnika 
+# ureda u Tokyo
+
+select b.firstName, b.lastName 
+from offices a inner join employees b
+on a.officeCode =b.officeCode 
+where a.city ='Tokyo';
+
+select employees.firstName, employees.lastName 
+from offices inner join employees
+on offices.officeCode =employees.officeCode 
+where offices.city ='Tokyo';
+
+select b.firstName, b.lastName 
+from offices a, employees b
+where a.officeCode =b.officeCode 
+and a.city ='Tokyo';
+
+# Otvorite novi ured u Osijeku
+select * from offices;
+INSERT INTO classicmodels.offices
+(officeCode, city, phone, addressLine1, addressLine2, state, country, postalCode, territory)
+VALUES('8', 'Osijek', '+38531897654', 'Kralja Tomislava 15', NULL, NULL, 'Croatia', '31000', 'Croatia');
