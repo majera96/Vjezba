@@ -27,8 +27,18 @@ echo "He was $charachterAge years old <br />";
 echo "He really liked the name $charachterName <br />";
 echo "But didn't like being $charachterAge  <br />";
 
+?>
 
+<?php
 
+echo "Učenje podataka";
+echo "<hr />";
+
+$phrase = "To be or not to be";
+$age = 30;
+$gpa = 32.0;
+$isMale = true;
+echo $phrase;
 
 
 ?>
