@@ -32,6 +32,12 @@ echo $_GET['boja'];
 
 ?>
 </pre>
+
+<?php 
+
+echo 'Testiranje extensiona u VSCu';
+
+?>
     
 </body>
 </html>
