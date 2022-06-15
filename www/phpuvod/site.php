@@ -40,6 +40,27 @@ $gpa = 32.0;
 $isMale = true;
 echo $phrase;
 
+?>
+
+echo "<hr />";
+
+
+<?php
+$phrase = "Giraffe Academy";
+echo strtolower($phrase);
+echo strtoupper($phrase);
+
+echo $phrase[0];
+echo $phrase[1];
+echo $phrase[2];
+echo $phrase[3];
+$phrase[0] = "B";
+
+echo "Antonio"[0];
+echo str_replace("ffe", "Panda", $phrase);
+echo substr($phrase, 8,3);
+
+
 
 ?>
 
