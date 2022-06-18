@@ -19,7 +19,7 @@ zadata02.php?element=h1&tekst=Edunova
 </head>
 <body>
     <?php echo '<',$_GET['element'],'>'; ?>
-    <?=$_GET['tekst'] ?>
+    <?=$_GET['tekst']; ?>
     <?php echo '</',$_GET['element'],'>'; ?>
     
 </body>
