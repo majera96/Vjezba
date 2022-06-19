@@ -21,6 +21,22 @@ zadata02.php?element=h1&tekst=Edunova
     <?php echo '<',$_GET['element'],'>'; ?>
     <?=$_GET['tekst']; ?>
     <?php echo '</',$_GET['element'],'>'; ?>
+
+    <?php 
+    //"2x rijesavam
+    ?>
+
+    <?php echo '<',$_GET['element'],'>'; ?>
+    <?=$_GET['tekst'];?>
+    <?php echo '</',$_GET['element'],'>'; ?>
+
+    <?php
+    // 3x 
+    ?>
+
+    <?php echo '<',$_GET['element'],'>'; ?>
+    <?=$_GET['tekst'];?>
+    <?php echo '</',$_GET['element'],'>'; ?>
     
 </body>
 </html>
