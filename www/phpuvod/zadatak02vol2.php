@@ -37,6 +37,6 @@ zadata02.php?element=h1&tekst=Edunova
     <?php echo '<',$_GET['element'],'>'; ?>
     <?=$_GET['tekst'];?>
     <?php echo '</',$_GET['element'],'>'; ?>
-    
+
 </body>
 </html>
