@@ -18,10 +18,12 @@ zadatak03.php?p1=Edunova&p2=Osijek&p3=Nema interneta
     <p>
     <?php echo $_GET['Edunova']; ?>
     </p> <br />
-    
+
+    <p>    
     <?php echo $_GET['Osijek']; ?>
     </p> <br />
 
+    <p>
     <?php echo $_GET['Nema interneta']; ?>
     </p>
 </body>

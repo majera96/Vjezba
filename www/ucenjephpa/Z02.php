@@ -1,3 +1,12 @@
+<?php
+
+
+// Stranica ispisuje 
+// Shaquille O'Neal 
+// koristeći echo funckciju s jednostrukim navodnicima
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -10,8 +19,8 @@
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout">
-          Koristite gornji izbornik
-        </div>
+        <?php echo "Shaquille O'Neal"; ?>
+    </div>
       </div>
     </div>
     <!-- End tijelo -->

@@ -1,3 +1,11 @@
+<?php
+
+
+// U okvirima trenutnog prijeloma 
+// stranice (isti dizajn kao i ostale stranice) ispišite
+// HELLO WORLD
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -10,7 +18,7 @@
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout">
-          Koristite gornji izbornik
+          <?php echo 'Hello world'; ?>
         </div>
       </div>
     </div>

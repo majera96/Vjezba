@@ -1,3 +1,12 @@
+<?php
+
+
+// Stranica prima 4 parametara i ispisuje ih jedno 
+// pored drugom svaki u svom panelu (callout)
+// na large širini
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -12,19 +21,24 @@
     <!-- Start tijelo -->
     
       <div class="grid-x grid-margin-x" id="tijelo">
-        <div class="cell large-2 medium-4 small-6">
+        <div class="cell large-2">
           <div class="success callout">
-            Edunova
+          Parametar 1
           </div>
         </div>
-        <div class="cell large-2 medium-4 small-6">
+        <div class="cell large-2">
           <div class="warning callout">  
-            Osijek
+          Parametar 2
           </div>
         </div>
-        <div class="cell large-2 medium-4 small-6">
+        <div class="cell large-2">
           <div class="alert callout">
-            Ponedjeljak
+          Parametar 3
+          </div>
+        </div>
+        <div class="cell large-2">
+          <div class="alert callout">
+            Parametar 4
           </div>
         </div>
       </div>

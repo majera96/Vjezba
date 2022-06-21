@@ -10,13 +10,15 @@
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout">
-          Koristite gornji izbornik
+          <p style="color: <?php echo $_GET['boja'] ?>">
+            <?php echo $_GET['ime'] ?>
+          </p>
         </div>
       </div>
     </div>
     <!-- End tijelo -->
     <?php 
-        require_once 'podnozje.php'; ?>
+    require_once 'podnozje.php'; ?>
     </div>
     <?php require_once 'jsskripte.php'; ?>
   </body>
