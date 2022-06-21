@@ -16,13 +16,13 @@ zadatak03.php?p1=Edunova&p2=Osijek&p3=Nema interneta
 </head>
 <body>
     <p>
-    <?php echo 'Edunova'; ?>
+    <?php echo $_GET['Edunova']; ?>
     </p> <br />
     
-    <?php echo 'Osijek'; ?>
+    <?php echo $_GET['Osijek']; ?>
     </p> <br />
 
-    <?php echo 'Nema interneta'; ?>
+    <?php echo $_GET['Nema interneta']; ?>
     </p>
 </body>
 </html>
