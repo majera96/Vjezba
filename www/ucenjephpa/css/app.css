@@ -1,16 +1,22 @@
 #tijelo{
     min-height: 400px;
-};
+}
 
 #skola{
     color: blue;
-};
+}
 
 #dan{
     color: aqua;
     font-style: italic;
-};
+}
 
 #grad{
     color: yellowgreen;
-};
+    font-size: 150px;
+}
+
+#uvod{
+    color: black;
+    font-size: 150px;
+}
