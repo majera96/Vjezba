@@ -13,17 +13,17 @@
     
       <div class="grid-x grid-margin-x" id="tijelo">
         <div class="cell large-2 medium-4 small-6">
-          <div class="success callout">
+          <div class="success callout" id="skola">
             Edunova
           </div>
         </div>
         <div class="cell large-2 medium-4 small-6">
-          <div class="warning callout">  
+          <div class="warning callout" id="grad">  
             Osijek
           </div>
         </div>
         <div class="cell large-2 medium-4 small-6">
-          <div class="alert callout">
+          <div class="alert callout" id="dan">
             Ponedjeljak
           </div>
         </div>

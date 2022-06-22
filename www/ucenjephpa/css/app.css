@@ -1,3 +1,16 @@
 #tijelo{
     min-height: 400px;
-}
+};
+
+#skola{
+    color: blue;
+};
+
+#dan{
+    color: aqua;
+    font-style: italic;
+};
+
+#grad{
+    color: yellowgreen;
+};
