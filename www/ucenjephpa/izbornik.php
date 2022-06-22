@@ -26,7 +26,7 @@
                         <li><a href="Z01.php">Zadatak 1</a></li>
                         <li><a href="Z02.php">Zadatak 2</a></li>
                         <li><a href="Z03.php">Zadatak 3</a></li>
-            
+                        <li><a href="Z04.php">Zadatak 4</a></li>
                     </ul>
                 </li>
             </ul>
