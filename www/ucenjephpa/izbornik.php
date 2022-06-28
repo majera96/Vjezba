@@ -25,7 +25,11 @@
                     <ul class="menu vertical">
                         <li><a target="_blank" href="osnovephpa/varijable.php">Varijable</a></li>
                         <li><a target="_blank" href="osnovephpa/operatori.php">Operatori</a></li>
-                    </ul>
+                        <li><a target="_blank" href="osnovephpa/uvjetnoGrananjeIf.php">Uvjetno grananje IF</a></li>
+                        <li><a target="_blank" href="osnovephpa/uvjetnoGrananjeSwitch.php">Uvjetno grananje Switch</a></li>
+                     <li><a target="_blank" href="osnovephpa/prviProgram.php">Prvi program</a></li>
+                     <li><a href="vizualniProgram.php">Vizualni program</a></li>
+                      </ul>
                 </li>
             </ul>
           </li>

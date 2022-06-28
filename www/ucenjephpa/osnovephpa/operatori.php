@@ -45,8 +45,18 @@ $j += ++$k; // k=3, j=2
 echo $i + $j + $k, '<hr />'; // 5
 
 //Zadatak 1:
+$a = 1; $b =0;
+$a += ++$b;
+echo $a + $b, '<hr />';
+
+//Zadatak 2:
+$a = 1; $b=4;
+$a += $b;
+echo $a + $b, '<hr />';
+
+//Zadatak 3:
 $i = 1; $j = 3;
-$k = $i + $j;
+$k = $i + $j; 
 $j += ++$k;
 echo $i + $j + $k;
 
