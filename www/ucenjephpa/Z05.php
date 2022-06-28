@@ -1,4 +1,17 @@
-<?php
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <?php require_once 'zaglavlje.php'; ?>
+  </head>
+<body>
+
+    <div class="grid-container">
+
+    <?php include_once 'izbornik.php'; ?>
+
+    <!-- Start tijelo -->
+
+    <?php
 
 
 // Stranica prima 4 GET parametara i ispisuje 
@@ -23,4 +36,22 @@ $konacniRez = $rez * $rez2;
 
 //izlaz
 echo $konacniRez;
+
+?>
+
+    <!-- End tijelo -->
+
+    <?php 
+    require_once 'podnozje.php'; ?>
+
+     
+    </div>
+
+    <?php require_once 'jsskripte.php'; ?>
+    
+  </body>
+</html>
+
+
+
 
