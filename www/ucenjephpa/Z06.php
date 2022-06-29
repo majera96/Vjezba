@@ -11,21 +11,65 @@
 
     <!-- Start tijelo -->
 
-    <?php
+<?php
+
+// Stranica prima 3 GET parametra koji su cjeli brojevi
+// stranica ispisuje najveći primljeni broj
+
+// ulaz: 3 8 92
+// izlaz: 92
 
 
-// Stranica prima cijeli broj.
-// ako je broj paran boja stranice treba biti zelena
-// inač treba biti crvena
+// ulaz: 3 3 2
+// izlaz: 3
 
-$a = isset($_GET['a']) ? $_GET['a'] : 0;
+// ulaz: -1 0 -1
+// izlaz: 0
 
-if (($a % 2)===0) {
-    echo '<body style="background-color: green">';
+//Ulaz zadatak 1:
+$a = isset($_GET['a']) ? $_GET['a'] : 3;
+$b = isset($_GET['b']) ? $_GET['b'] : 8;
+$c = isset($_GET['c']) ? $_GET['c'] : 92;
+
+//Obrada:
+if($a > $b && $a > $c){
+    echo 'Najveći broj je ' . $a;
+} else if ($b > $a && $b > $c) {
+    echo 'Najveći broj je ' . $b;
 } else {
-    echo '<body style="background-color: red">';
-
+    echo 'Najveći broj je ' . $c, '<hr />';
 }
+
+//Ulaz zadatak 2:
+$a = isset($_GET['a']) ? $_GET['a'] : 3;
+$b = isset($_GET['b']) ? $_GET['b'] : 3;
+$c = isset($_GET['c']) ? $_GET['c'] : 2;
+
+
+//Obrada
+if($a > $b && $a > $c){
+    echo 'Najveći broj je ' . $a;
+} else if($b > $a && $b > $c){
+    echo 'Najveći broj je ' . $b;
+} else {
+    echo 'Najveći broj je ' . $c, '<hr />';
+}
+
+
+//Ulaz zadatak 3:
+$x = isset($_GET['x']) ? $_GET['x'] : -1;
+$y = isset($_GET['y']) ? $_GET['y'] : 0;
+$z = isset($_GET['z']) ? $_GET['z'] : -1;
+
+//Obrada
+if($x > $y && $x > $z){
+    echo 'Najveći broj je ' . $x;
+} else if($y > $x && $y > $z){
+    echo 'Najveći broj je ' . $y;
+} else {
+    echo 'Najveći broj je ' . $z;
+}
+
 
 
 
@@ -45,4 +89,3 @@ if (($a % 2)===0) {
     
   </body>
 </html>
-

@@ -45,6 +45,7 @@
                         <li><a target="_blank" href="Z04.php">Zadatak 4</a></li>
                         <li><a target="_blank" href="Z05.php">Zadatak 5</a></li>
                         <li><a target="_blank" href="Z06.php">Zadatak 6</a></li>
+                        <li><a target="_blank" href="Z07.php">Zadatak 7</a></li>
                     </ul>
                 </li>
             </ul>

@@ -39,6 +39,8 @@ echo $konacniRez;
 
 ?>
 
+
+
     <!-- End tijelo -->
 
     <?php 
