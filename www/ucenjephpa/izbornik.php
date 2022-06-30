@@ -31,6 +31,14 @@
                      <li><a href="vizualniProgram.php">Vizualni program</a></li>
                       </ul>
                 </li>
+                <li>
+                    <a href="#">Nizovi i petlje</a>
+                    <ul class="menu vertical">
+                     <li><a href="nizoviipetlje/nizovi.php">Nizovi</a></li>
+                     <li><a href="nizoviipetlje/ugradeniNizovi.php">Ugradeni nizovi</a></li>  
+                     <li><a href="nizoviipetlje/funkcijeNizovi.php">Funkcije i nizovi</a></li>  
+   </ul>
+                </li>
             </ul>
           </li>
           <li>
