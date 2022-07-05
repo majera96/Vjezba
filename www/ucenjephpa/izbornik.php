@@ -37,7 +37,11 @@
                      <li><a href="nizoviipetlje/nizovi.php">Nizovi</a></li>
                      <li><a href="nizoviipetlje/ugradeniNizovi.php">Ugradeni nizovi</a></li>  
                      <li><a href="nizoviipetlje/funkcijeNizovi.php">Funkcije i nizovi</a></li>  
-   </ul>
+                     <li><a href="nizoviipetlje/forPetlja.php">For petlja</a></li>  
+                     <li><a href="nizoviipetlje/whilePetlja.php">While petlja</a></li>  
+                     <li><a href="nizoviipetlje/forEachPetlja.php">For each petlja</a></li>  
+                     <li><a href="nizoviipetlje/doWhilePetlja.php">Do While petlja</a></li>  
+                    </ul>
                 </li>
             </ul>
           </li>
@@ -54,6 +58,9 @@
                         <li><a target="_blank" href="Z05.php">Zadatak 5</a></li>
                         <li><a target="_blank" href="Z06.php">Zadatak 6</a></li>
                         <li><a target="_blank" href="Z07.php">Zadatak 7</a></li>
+                        <li><a target="_blank" href="Z08.php">Zadatak 8</a></li>
+                        <li><a target="_blank" href="Z09.php">Zadatak 9</a></li>
+
                     </ul>
                 </li>
             </ul>

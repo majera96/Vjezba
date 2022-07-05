@@ -30,7 +30,7 @@ $a = isset($_GET['a']) ? $_GET['a'] : 0;
 <form action="" method="get">
   <label>
   Unesite broj: 
-  <input type="text" value="<?=$a?>">
+  <input type="text" value="<?=$a?>" name="broj">
   <input class="success button expanded" type="submit">
   </label>
 </form>
