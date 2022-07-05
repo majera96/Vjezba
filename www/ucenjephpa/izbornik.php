@@ -59,7 +59,7 @@
                         <li><a target="_blank" href="Z06.php">Zadatak 6</a></li>
                         <li><a target="_blank" href="Z07.php">Zadatak 7</a></li>
                         <li><a target="_blank" href="Z08.php">Zadatak 8</a></li>
-                        <li><a target="_blank" href="Z09.php">Zadatak 9</a></li>
+                        <li><a target="_blank" href="ciklickaMatrica.php">Ciklicka matrica zadatak</a></li>
 
                     </ul>
                 </li>
