@@ -73,6 +73,8 @@
                     <li><a target="_blank" href="ciklickaMatrica.php">Ciklicka matrica</a></li>   
                     <li><a target="_blank" href="vjezbadoma\uzorak.php">Pattern program</a></li>
                     <li><a target="_blank" href="vjezbadoma\obrnutiuzorak.php">Pattern program part 2</a></li>
+                    <li><a target="_blank" href="vjezbadoma\piradimalniuzorak.php">Pyramid Pattern</a></li>
+
                     </ul>
                 </li>
             </ul>
