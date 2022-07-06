@@ -59,11 +59,20 @@
                         <li><a target="_blank" href="Z06.php">Zadatak 6</a></li>
                         <li><a target="_blank" href="Z07.php">Zadatak 7</a></li>
                         <li><a target="_blank" href="Z08.php">Zadatak 8</a></li>
-                        <li><a target="_blank" href="ciklickaMatrica.php">Ciklicka matrica zadatak</a></li>
                         <li><a target="_blank" href="Z09.php">Zadatak 9</a></li>
                         <li><a target="_blank" href="Z10.php">Zadatak 10</a></li>
                         <li><a target="_blank" href="Z11.php">Zadatak 11</a></li>
 
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Vjezba doma</a>
+                    <ul class="menu vertical">
+                    <li><a target="_blank" href="ciklickaMatrica.php">Ciklicka matrica</a></li>   
+                    <li><a target="_blank" href="vjezbadoma\uzorak.php">Pattern program</a></li>
+                    <li><a target="_blank" href="vjezbadoma\obrnutiuzorak.php">Pattern program part 2</a></li>
                     </ul>
                 </li>
             </ul>
