@@ -14,8 +14,8 @@
     <?php 
 
     //ulaz
-    $redak=$_POST['x'];
-    $stupac=$_POST['y'];
+    $a = isset($_GET['a']) ? $_GET['a'] : 0;
+    $b = isset($_GET['b']) ? $_GET['b'] : 0;
 
     ?>
     
@@ -27,9 +27,9 @@
     <div class="input">
 <form action="" method="post">
     <div class="redak"><p>Unesite broj redaka</p> </div>
-    <input type="number" class="unosRedaka" name="x" value="<?$redak?>">
+    <input type="number" class="unosRedaka" name="x" value="<?=$a?>">
     <div class="stupac"><p>Unesite broj stupaca</p></div>
-    <input type="number" class="unosStupaca" name="y" value="<?$stupac?>">
+    <input type="number" class="unosStupaca" name="y" value="<?=$b?>">
     <input class="success button expanded" type="submit" value="Kreiraj tablicu">
 </form>
 
@@ -39,6 +39,9 @@
     <?php
 
     //Obrada
+
+
+?>
 
 
     <!-- End tijelo -->
