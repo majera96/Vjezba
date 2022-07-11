@@ -43,6 +43,13 @@
                      <li><a href="nizoviipetlje/doWhilePetlja.php">Do While petlja</a></li>  
                     </ul>
                 </li>
+                <li>
+                    <a href="#">Forme</a>
+                    <ul class="menu vertical">
+                     <li><a href="getforma.php">GET Forma</a></li>
+                     <li><a href="postforma.php">POST forma</a></li>  
+                    </ul>
+                </li>
             </ul>
           </li>
           <li>
