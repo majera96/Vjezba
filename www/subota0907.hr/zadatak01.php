@@ -27,7 +27,7 @@ echo '<hr />';
 $niz = [
     'ime' => 'Antonio',
     'cijena' => 500.99,
-    'verifiiran' => false
+    'verificiran' => false
 ];
 
 echo $niz['cijena'];

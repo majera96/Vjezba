@@ -1,6 +1,6 @@
 <?php
 
-$b1 = isset($_GET['b1']) ? (int)$_GET['1']: 0;
+$b1 = isset($_GET['b1']) ? (int)$_GET['b1']: 0;
 
 $b1 = (int) $b1;
 
