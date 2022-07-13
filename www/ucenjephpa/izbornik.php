@@ -50,6 +50,13 @@
                      <li><a href="postforma.php">POST forma</a></li>  
                     </ul>
                 </li>
+                <li>
+                    <a href="#">Funkcije i rekurzija</a>
+                    <ul class="menu vertical">
+                     <li><a href="vrstefunkcija.php">Vrste funkcija</a></li>
+                     <li><a href="rekurzija.php">Rekurzija</a></li>  
+                    </ul>
+                </li>
             </ul>
           </li>
           <li>
